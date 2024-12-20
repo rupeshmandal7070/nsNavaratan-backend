@@ -49,7 +49,7 @@ const myCustomLabels = {
       },
       isAppUser: { type: Boolean, default: true },
       isActive: { type: Boolean },
-      isDeleted: { type: Boolean },
+      isDeleted: { type: Boolean,default:false },
       createdAt: { type: Date },
       updatedAt: { type: Date },
      

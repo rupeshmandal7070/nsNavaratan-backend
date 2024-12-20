@@ -36,10 +36,7 @@ router.get('/auth/google/callback',
           }
           res.cookie("authCookie",result.data.token)
           res.redirect(process.env.GOOGLE_REDIRECTURL)
-          // return res.success({
-          //   data: result.data,
-          //   message:'Login Successful' 
-          // });
+
         } catch (error) {
           return res.internalServerError({ message: error.message });
         }

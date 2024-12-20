@@ -14,10 +14,12 @@ const adminPassportStrategy = (passport) => {
   const options = {};
   options.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
   options.secretOrKey = JWT.ADMIN_SECRET;
+  
   passport.use('admin-rule',
     new Strategy(options, async (payload, done) => {
       try {
         const result = await User.findOne({ _id: payload.id });
+        console.log(result,'this is result')
         if (result) {
           return done(null, result.toJSON());
         }
